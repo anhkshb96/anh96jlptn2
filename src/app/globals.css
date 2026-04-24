@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply w-full bg-black text-white font-medium py-4 px-6 rounded-xl text-lg
+           active:opacity-70 transition-opacity disabled:opacity-30 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply w-full bg-white text-black font-medium py-3 px-6 rounded-xl text-base
+           border border-gray-300 active:bg-gray-50 transition-colors disabled:opacity-30;
+  }
+
+  .btn-outline {
+    @apply border border-black text-black font-medium py-3 px-6 rounded-xl text-base
+           active:bg-gray-100 transition-colors;
+  }
+
+  .choice-btn {
+    @apply w-full text-left py-3 px-4 rounded-xl border border-gray-200 text-base
+           transition-colors active:opacity-70;
+  }
+
+  .choice-btn-selected {
+    @apply border-black bg-black text-white;
+  }
+
+  .choice-btn-correct {
+    @apply border-green-700 bg-green-50 text-green-900;
+  }
+
+  .choice-btn-wrong {
+    @apply border-red-600 bg-red-50 text-red-900;
+  }
+
+  .card {
+    @apply bg-white border border-gray-100 rounded-2xl p-4;
+  }
+
+  .section-label {
+    @apply text-xs font-medium text-gray-400 uppercase tracking-widest mb-2;
+  }
+
+  .fukkyu-badge {
+    @apply inline-block text-xs font-medium bg-amber-100 text-amber-800
+           px-2 py-0.5 rounded-full;
+  }
+
+  @keyframes pulse-fast {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .animate-pulse-fast {
+    animation: pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
